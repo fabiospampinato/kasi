@@ -1,0 +1,197 @@
+# Kasi
+
+A collection of functions for working with different casings.
+
+## Install
+
+```sh
+npm install --save kasi
+```
+
+## Functions
+
+| Check                             | Convert                           | Extra             |
+| --------------------------------- | --------------------------------- | ----------------- |
+| [isCamelCase](#iscamelcase)       | [toCamelCase](#tocamelcase)       | [apply](#apply)   |
+| [isConstantCase](#isconstantcase) | [toConstantCase](#toconstantcase) | [copy](#copy)     |
+| [isKebabCase](#iskebabcase)       | [toKebabCase](#tokebabcase)       | [detect](#detect) |
+| [isLowerCase](#islowercase)       | [toLowerCase](#tolowercase)       |                   |
+| [isPascalCase](#ispascalcase)     | [toPascalCase](#topascalcase)     |                   |
+| [isSnakeCase](#issnakecase)       | [toSnakeCase](#tosnakecase)       |                   |
+| [isUpperCase](#isuppercase)       | [toUpperCase](#touppercase)       |                   |
+
+### Check
+
+These functions allow you to check if a string is using a specific casing.
+
+#### `isCamelCase`
+
+```ts
+import {isCamelCase} from 'kasi';
+
+isCamelCase ( 'fooBar' ); // => true
+isCamelCase ( 'foo-bar' ); // => false
+```
+
+#### `isConstantCase`
+
+```ts
+import {isConstantCase} from 'kasi';
+
+isConstantCase ( 'FOO_BAR' ); // => true
+isConstantCase ( 'fooBar' ); // => false
+```
+
+#### `isKebabCase`
+
+```ts
+import {isKebabCase} from 'kasi';
+
+isKebabCase ( 'foo-bar' ); // => true
+isKebabCase ( 'fooBar' ); // => false
+```
+
+#### `isLowerCase`
+
+```ts
+import {isLowerCase} from 'kasi';
+
+isLowerCase ( 'foo' ); // => true
+isLowerCase ( 'Foo' ); // => false
+```
+
+#### `isPascalCase`
+
+```ts
+import {isPascalCase} from 'kasi';
+
+isPascalCase ( 'FooBar' ); // => true
+isPascalCase ( 'fooBar' ); // => false
+```
+
+#### `isSnakeCase`
+
+```ts
+import {isSnakeCase} from 'kasi';
+
+isSnakeCase ( 'foo_bar' ); // => true
+isSnakeCase ( 'fooBar' ); // => false
+```
+
+#### `isUpperCase`
+
+```ts
+import {isUpperCase} from 'kasi';
+
+isUpperCase ( 'FOO' ); // => true
+isUpperCase ( 'foo' ); // => false
+```
+
+### Convert
+
+These functions allow you to convert a string to a specific casing.
+
+#### `toCamelCase`
+
+```ts
+import {toCamelCase} from 'kasi';
+
+toCamelCase ( 'foo-bar' ); // => 'fooBar'
+toCamelCase ( 'foo_bar' ); // => 'fooBar'
+```
+
+#### `toConstantCase`
+
+```ts
+import {toConstantCase} from 'kasi';
+
+toConstantCase ( 'fooBar' ); // => 'FOO_BAR'
+toConstantCase ( 'foo-bar' ); // => 'FOO_BAR'
+```
+
+#### `toKebabCase`
+
+```ts
+import {toKebabCase} from 'kasi';
+
+toKebabCase ( 'fooBar' ); // => 'foo-bar'
+toKebabCase ( 'foo_bar' ); // => 'foo-bar'
+```
+
+#### `toLowerCase`
+
+```ts
+import {toLowerCase} from 'kasi';
+
+toLowerCase ( 'FooBar' ); // => 'foobar'
+toLowerCase ( 'foo-bar' ); // => 'foo-bar'
+```
+
+#### `toPascalCase`
+
+```ts
+import {toPascalCase} from 'kasi';
+
+toPascalCase ( 'foo-bar' ); // => 'FooBar'
+toPascalCase ( 'foo_bar' ); // => 'FooBar'
+```
+
+#### `toSnakeCase`
+
+```ts
+import {toSnakeCase} from 'kasi';
+
+toSnakeCase ( 'fooBar' ); // => 'foo_bar'
+toSnakeCase ( 'foo-bar' ); // => 'foo_bar'
+```
+
+#### `toUpperCase`
+
+```ts
+import {toUpperCase} from 'kasi';
+
+toUpperCase ( 'fooBar' ); // => 'FOOBAR'
+toUpperCase ( 'foo-bar' ); // => 'FOO-BAR'
+```
+
+### Extra
+
+These extra functions perform other operations related to casings.
+
+#### `apply`
+
+Transform a string to the given casing. Useful in combination with `detect`.
+
+```ts
+import {apply} from 'kasi';
+
+apply ( 'foo-bar', 'camel' ); // => 'fooBar'
+apply ( 'foo-bar', 'constant' ); // => 'FOO_BAR'
+```
+
+#### `copy`
+
+This function copies the casing of a string to another string, character by character. The two strings must have the same length.
+
+```ts
+import {copy} from 'kasi';
+
+copy ( 'sIlLy', 'lions' ); // => 'lIoNs'
+copy ( 'SiLlY', 'lions' ); // => 'LiOnS'
+```
+
+#### `detect`
+
+This function detects the casing of a string. Useful in combination with `apply`.
+
+```ts
+import {detect} from 'kasi';
+
+detect ( 'fooBar' ); // => 'camel'
+detect ( 'FOO_BAR' ); // => 'constant'
+detect ( ' foo BAR ' ); // => 'unknown'
+```
+
+## License
+
+MIT © Fabio Spampinato
