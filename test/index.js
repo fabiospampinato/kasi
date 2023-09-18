@@ -22,6 +22,7 @@ describe ( 'Kasi', it => {
     t.is ( isCamelCase ( 'PascalCase' ), false );
     t.is ( isCamelCase ( 'snake_case' ), false );
     t.is ( isCamelCase ( 'UPPERCASE' ), false );
+    t.is ( isCamelCase ( 'useHTMLBox' ), false );
     t.is ( isCamelCase ( 'sYlLyCaSe' ), true );
     t.is ( isCamelCase ( 'SyLlYcAsE' ), false );
     t.is ( isCamelCase ( '  multi UPPER word  ' ), false );
@@ -38,6 +39,7 @@ describe ( 'Kasi', it => {
     t.is ( isConstantCase ( 'PascalCase' ), false );
     t.is ( isConstantCase ( 'snake_case' ), false );
     t.is ( isConstantCase ( 'UPPERCASE' ), true );
+    t.is ( isConstantCase ( 'useHTMLBox' ), false );
     t.is ( isConstantCase ( 'sYlLyCaSe' ), false );
     t.is ( isConstantCase ( 'SyLlYcAsE' ), false );
     t.is ( isConstantCase ( '  multi UPPER word  ' ), false );
@@ -54,6 +56,7 @@ describe ( 'Kasi', it => {
     t.is ( isKebabCase ( 'PascalCase' ), false );
     t.is ( isKebabCase ( 'snake_case' ), false );
     t.is ( isKebabCase ( 'UPPERCASE' ), false );
+    t.is ( isKebabCase ( 'useHTMLBox' ), false );
     t.is ( isKebabCase ( 'sYlLyCaSe' ), false );
     t.is ( isKebabCase ( 'SyLlYcAsE' ), false );
     t.is ( isKebabCase ( '  multi UPPER word  ' ), false );
@@ -70,6 +73,7 @@ describe ( 'Kasi', it => {
     t.is ( isLowerCase ( 'PascalCase' ), false );
     t.is ( isLowerCase ( 'snake_case' ), true );
     t.is ( isLowerCase ( 'UPPERCASE' ), false );
+    t.is ( isLowerCase ( 'useHTMLBox' ), false );
     t.is ( isLowerCase ( 'sYlLyCaSe' ), false );
     t.is ( isLowerCase ( 'SyLlYcAsE' ), false );
     t.is ( isLowerCase ( '  multi UPPER word  ' ), false );
@@ -86,6 +90,7 @@ describe ( 'Kasi', it => {
     t.is ( isPascalCase ( 'PascalCase' ), true );
     t.is ( isPascalCase ( 'snake_case' ), false );
     t.is ( isPascalCase ( 'UPPERCASE' ), false );
+    t.is ( isPascalCase ( 'useHTMLBox' ), false );
     t.is ( isPascalCase ( 'sYlLyCaSe' ), false );
     t.is ( isPascalCase ( 'SyLlYcAsE' ), true );
     t.is ( isPascalCase ( '  multi UPPER word  ' ), false );
@@ -102,6 +107,7 @@ describe ( 'Kasi', it => {
     t.is ( isSnakeCase ( 'PascalCase' ), false );
     t.is ( isSnakeCase ( 'snake_case' ), true );
     t.is ( isSnakeCase ( 'UPPERCASE' ), false );
+    t.is ( isSnakeCase ( 'useHTMLBox' ), false );
     t.is ( isSnakeCase ( 'sYlLyCaSe' ), false );
     t.is ( isSnakeCase ( 'SyLlYcAsE' ), false );
     t.is ( isSnakeCase ( '  multi UPPER word  ' ), false );
@@ -118,6 +124,7 @@ describe ( 'Kasi', it => {
     t.is ( isUpperCase ( 'PascalCase' ), false );
     t.is ( isUpperCase ( 'snake_case' ), false );
     t.is ( isUpperCase ( 'UPPERCASE' ), true );
+    t.is ( isUpperCase ( 'useHTMLBox' ), false );
     t.is ( isUpperCase ( 'sYlLyCaSe' ), false );
     t.is ( isUpperCase ( 'SyLlYcAsE' ), false );
     t.is ( isUpperCase ( '  multi UPPER word  ' ), false );
@@ -136,6 +143,7 @@ describe ( 'Kasi', it => {
     t.is ( toCamelCase ( 'PascalCase' ), 'pascalCase' );
     t.is ( toCamelCase ( 'snake_case' ), 'snakeCase' );
     t.is ( toCamelCase ( 'UPPERCASE' ), 'uppercase' );
+    t.is ( toCamelCase ( 'useHTMLBox' ), 'useHtmlBox' );
     t.is ( toCamelCase ( 'sYlLyCaSe' ), 'sYlLyCaSe' );
     t.is ( toCamelCase ( 'SyLlYcAsE' ), 'syLlYcAsE' );
     t.is ( toCamelCase ( '  multi UPPER word  ' ), 'multiUpperWord' );
@@ -152,6 +160,7 @@ describe ( 'Kasi', it => {
     t.is ( toConstantCase ( 'PascalCase' ), 'PASCAL_CASE' );
     t.is ( toConstantCase ( 'snake_case' ), 'SNAKE_CASE' );
     t.is ( toConstantCase ( 'UPPERCASE' ), 'UPPERCASE' );
+    t.is ( toConstantCase ( 'useHTMLBox' ), 'USE_HTML_BOX' );
     t.is ( toConstantCase ( 'sYlLyCaSe' ), 'S_YL_LY_CA_SE' );
     t.is ( toConstantCase ( 'SyLlYcAsE' ), 'SY_LL_YC_AS_E' );
     t.is ( toConstantCase ( '  multi UPPER word  ' ), 'MULTI_UPPER_WORD' );
@@ -168,6 +177,7 @@ describe ( 'Kasi', it => {
     t.is ( toKebabCase ( 'PascalCase' ), 'pascal-case' );
     t.is ( toKebabCase ( 'snake_case' ), 'snake-case' );
     t.is ( toKebabCase ( 'UPPERCASE' ), 'uppercase' );
+    t.is ( toKebabCase ( 'useHTMLBox' ), 'use-html-box' );
     t.is ( toKebabCase ( 'sYlLyCaSe' ), 's-yl-ly-ca-se' );
     t.is ( toKebabCase ( 'SyLlYcAsE' ), 'sy-ll-yc-as-e' );
     t.is ( toKebabCase ( '  multi UPPER word  ' ), 'multi-upper-word' );
@@ -184,6 +194,7 @@ describe ( 'Kasi', it => {
     t.is ( toLowerCase ( 'PascalCase' ), 'pascalcase' );
     t.is ( toLowerCase ( 'snake_case' ), 'snake_case' );
     t.is ( toLowerCase ( 'UPPERCASE' ), 'uppercase' );
+    t.is ( toLowerCase ( 'useHTMLBox' ), 'usehtmlbox' );
     t.is ( toLowerCase ( 'sYlLyCaSe' ), 'syllycase' );
     t.is ( toLowerCase ( 'SyLlYcAsE' ), 'syllycase' );
     t.is ( toLowerCase ( '  multi UPPER word  ' ), '  multi upper word  ' );
@@ -200,6 +211,7 @@ describe ( 'Kasi', it => {
     t.is ( toPascalCase ( 'PascalCase' ), 'PascalCase' );
     t.is ( toPascalCase ( 'snake_case' ), 'SnakeCase' );
     t.is ( toPascalCase ( 'UPPERCASE' ), 'Uppercase' );
+    t.is ( toPascalCase ( 'useHTMLBox' ), 'UseHtmlBox' );
     t.is ( toPascalCase ( 'sYlLyCaSe' ), 'SYlLyCaSe' );
     t.is ( toPascalCase ( 'SyLlYcAsE' ), 'SyLlYcAsE' );
     t.is ( toPascalCase ( '  multi UPPER word  ' ), 'MultiUpperWord' );
@@ -216,6 +228,8 @@ describe ( 'Kasi', it => {
     t.is ( toSnakeCase ( 'PascalCase' ), 'pascal_case' );
     t.is ( toSnakeCase ( 'snake_case' ), 'snake_case' );
     t.is ( toSnakeCase ( 'UPPERCASE' ), 'uppercase' );
+    t.is ( toSnakeCase ( 'useHTMLBox' ), 'use_html_box' );
+    t.is ( toSnakeCase ( 'useHTMLBox' ), 'use_html_box' );
     t.is ( toSnakeCase ( 'sYlLyCaSe' ), 's_yl_ly_ca_se' );
     t.is ( toSnakeCase ( 'SyLlYcAsE' ), 'sy_ll_yc_as_e' );
     t.is ( toSnakeCase ( '  multi UPPER word  ' ), 'multi_upper_word' );
@@ -232,6 +246,7 @@ describe ( 'Kasi', it => {
     t.is ( toUpperCase ( 'PascalCase' ), 'PASCALCASE' );
     t.is ( toUpperCase ( 'snake_case' ), 'SNAKE_CASE' );
     t.is ( toUpperCase ( 'UPPERCASE' ), 'UPPERCASE' );
+    t.is ( toUpperCase ( 'useHTMLBox' ), 'USEHTMLBOX' );
     t.is ( toUpperCase ( 'sYlLyCaSe' ), 'SYLLYCASE' );
     t.is ( toUpperCase ( 'SyLlYcAsE' ), 'SYLLYCASE' );
     t.is ( toUpperCase ( '  multi UPPER word  ' ), '  MULTI UPPER WORD  ' );
@@ -270,6 +285,7 @@ describe ( 'Kasi', it => {
     t.is ( detect ( 'PascalCase' ), 'pascal' );
     t.is ( detect ( 'snake_case' ), 'snake' );
     t.is ( detect ( 'UPPERCASE' ), 'upper' );
+    t.is ( detect ( 'useHTMLBox' ), 'unknown' );
     t.is ( detect ( 'sYlLyCaSe' ), 'camel' );
     t.is ( detect ( 'SyLlYcAsE' ), 'pascal' );
     t.is ( detect ( '  multi UPPER word  ' ), 'unknown' );
