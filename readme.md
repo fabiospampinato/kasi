@@ -14,10 +14,13 @@ npm install --save kasi
 | --------------------------------- | --------------------------------- | ----------------- |
 | [isCamelCase](#iscamelcase)       | [toCamelCase](#tocamelcase)       | [apply](#apply)   |
 | [isConstantCase](#isconstantcase) | [toConstantCase](#toconstantcase) | [copy](#copy)     |
-| [isKebabCase](#iskebabcase)       | [toKebabCase](#tokebabcase)       | [detect](#detect) |
+| [isDotCase](#isdotcase)           | [toDotCase](#todotcase)           | [detect](#detect) |
+| [isKebabCase](#iskebabcase)       | [toKebabCase](#tokebabcase)       |                   |
 | [isLowerCase](#islowercase)       | [toLowerCase](#tolowercase)       |                   |
 | [isPascalCase](#ispascalcase)     | [toPascalCase](#topascalcase)     |                   |
+| [isPathCase](#ispathcase)         | [toPathCase](#topathcase)         |                   |
 | [isSnakeCase](#issnakecase)       | [toSnakeCase](#tosnakecase)       |                   |
+| [isTitleCase](#istitlecase)       | [toTitleCase](#totitlecase)       |                   |
 | [isUpperCase](#isuppercase)       | [toUpperCase](#touppercase)       |                   |
 
 ### Check
@@ -40,6 +43,15 @@ import {isConstantCase} from 'kasi';
 
 isConstantCase ( 'FOO_BAR' ); // => true
 isConstantCase ( 'fooBar' ); // => false
+```
+
+#### `isDotCase`
+
+```ts
+import {isDotCase} from 'kasi';
+
+isDotCase ( 'foo.bar' ); // => true
+isDotCase ( 'fooBar' ); // => false
 ```
 
 #### `isKebabCase`
@@ -69,6 +81,15 @@ isPascalCase ( 'FooBar' ); // => true
 isPascalCase ( 'fooBar' ); // => false
 ```
 
+#### `isPathCase`
+
+```ts
+import {isPathCase} from 'kasi';
+
+isPathCase ( 'foo/bar' ); // => true
+isPathCase ( 'fooBar' ); // => false
+```
+
 #### `isSnakeCase`
 
 ```ts
@@ -76,6 +97,15 @@ import {isSnakeCase} from 'kasi';
 
 isSnakeCase ( 'foo_bar' ); // => true
 isSnakeCase ( 'fooBar' ); // => false
+```
+
+#### `isTitleCase`
+
+```ts
+import {isTitleCase} from 'kasi';
+
+isTitleCase ( 'Foo Bar' ); // => true
+isTitleCase ( 'fooBar' ); // => false
 ```
 
 #### `isUpperCase`
@@ -109,6 +139,15 @@ toConstantCase ( 'fooBar' ); // => 'FOO_BAR'
 toConstantCase ( 'foo-bar' ); // => 'FOO_BAR'
 ```
 
+#### `toDotCase`
+
+```ts
+import {toDotCase} from 'kasi';
+
+toDotCase ( 'fooBar' ); // => 'foo.bar'
+toDotCase ( 'foo-bar' ); // => 'foo.bar'
+```
+
 #### `toKebabCase`
 
 ```ts
@@ -136,6 +175,15 @@ toPascalCase ( 'foo-bar' ); // => 'FooBar'
 toPascalCase ( 'foo_bar' ); // => 'FooBar'
 ```
 
+#### `toPathCase`
+
+```ts
+import {toPathCase} from 'kasi';
+
+toPathCase ( 'fooBar' ); // => 'foo/bar'
+toPathCase ( 'foo-bar' ); // => 'foo/bar'
+```
+
 #### `toSnakeCase`
 
 ```ts
@@ -143,6 +191,15 @@ import {toSnakeCase} from 'kasi';
 
 toSnakeCase ( 'fooBar' ); // => 'foo_bar'
 toSnakeCase ( 'foo-bar' ); // => 'foo_bar'
+```
+
+#### `toTitleCase`
+
+```ts
+import {toTitleCase} from 'kasi';
+
+toTitleCase ( 'fooBar' ); // => 'Foo Bar'
+toTitleCase ( 'foo-bar' ); // => 'Foo Bar'
 ```
 
 #### `toUpperCase`

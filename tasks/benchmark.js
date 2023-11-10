@@ -2,8 +2,8 @@
 /* IMPORT */
 
 import benchmark from 'benchloop';
-import {isCamelCase, isConstantCase, isKebabCase, isLowerCase, isPascalCase, isSnakeCase, isUpperCase} from '../dist/index.js';
-import {toCamelCase, toConstantCase, toKebabCase, toLowerCase, toPascalCase, toSnakeCase, toUpperCase} from '../dist/index.js';
+import {isCamelCase, isConstantCase, isDotCase, isKebabCase, isLowerCase, isPascalCase, isPathCase, isSnakeCase, isTitleCase, isUpperCase} from '../dist/index.js';
+import {toCamelCase, toConstantCase, toDotCase, toKebabCase, toLowerCase, toPascalCase, toPathCase, toSnakeCase, toTitleCase, toUpperCase} from '../dist/index.js';
 import {copy, detect} from '../dist/index.js';
 
 /* HELPERS */
@@ -18,7 +18,7 @@ benchmark.config ({
 
 benchmark.group ( 'check', () => {
 
-  for ( const is of [isCamelCase, isConstantCase, isKebabCase, isLowerCase, isPascalCase, isSnakeCase, isUpperCase] ) {
+  for ( const is of [isCamelCase, isConstantCase, isDotCase, isKebabCase, isLowerCase, isPascalCase, isPathCase, isSnakeCase, isTitleCase, isUpperCase] ) {
 
     benchmark ({
       name: is.name,
@@ -33,7 +33,7 @@ benchmark.group ( 'check', () => {
 
 benchmark.group ( 'convert', () => {
 
-  for ( const to of [toCamelCase, toConstantCase, toKebabCase, toLowerCase, toPascalCase, toSnakeCase, toUpperCase] ) {
+  for ( const to of [toCamelCase, toConstantCase, toDotCase, toKebabCase, toLowerCase, toPascalCase, toPathCase, toSnakeCase, toTitleCase, toUpperCase] ) {
 
     benchmark ({
       name: to.name,
