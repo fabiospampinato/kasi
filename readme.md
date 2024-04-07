@@ -249,6 +249,10 @@ detect ( 'FOO_BAR' ); // => 'constant'
 detect ( ' foo BAR ' ); // => 'unknown'
 ```
 
+## Related
+
+- **[Kasi for VSCode](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.kasi)**: The official companion extension for Kasi, for quickly changing the casing of your selections.
+
 ## License
 
 MIT © Fabio Spampinato
