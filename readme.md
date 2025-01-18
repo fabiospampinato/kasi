@@ -5,7 +5,7 @@ A collection of functions for working with different casings.
 ## Install
 
 ```sh
-npm install --save kasi
+npm install kasi
 ```
 
 ## Functions
