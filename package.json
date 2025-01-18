@@ -2,6 +2,7 @@
   "name": "kasi",
   "repository": "github:fabiospampinato/kasi",
   "description": "A collection of functions for working with different casings.",
+  "license": "MIT",
   "version": "1.1.0",
   "type": "module",
   "sideEffects": false,
@@ -27,8 +28,8 @@
   ],
   "devDependencies": {
     "benchloop": "^2.1.1",
-    "fava": "^0.3.1",
-    "tsex": "^3.0.1",
-    "typescript": "^5.2.2"
+    "fava": "^0.3.4",
+    "tsex": "^4.0.2",
+    "typescript": "^5.7.3"
   }
 }
