@@ -1,7 +1,7 @@
 
 /* HELPERS */
 
-const splitRe = /([a-z])([A-Z]+)(?=([a-z])?)|([.:/_-])/g;
+const splitRe = /(^|[a-z])([A-Z]+)(?=([a-z])?)|([.:/_-])/g;
 
 /* MAIN */
 
