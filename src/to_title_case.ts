@@ -11,7 +11,7 @@ const upperRe = /^\w|\s\w/g;
 
 const toTitleCase = ( value: string ): string => {
 
-  return toSpaceCase ( value ).replaceAll ( upperRe, _ => _.toUpperCase () );
+  return toSpaceCase ( value, true ).replaceAll ( upperRe, _ => _.toUpperCase () );
 
 };
 
