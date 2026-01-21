@@ -29,6 +29,7 @@ describe ( 'Kasi', it => {
     t.is ( isCamelCase ( 'HTMLParser' ), false );
     t.is ( isCamelCase ( 'sYlLyCaSe' ), true );
     t.is ( isCamelCase ( 'SyLlYcAsE' ), false );
+    t.is ( isCamelCase ( ' _TEST_FOOBar-baz baz' ), false );
     t.is ( isCamelCase ( '  multi UPPER word  ' ), false );
 
   });
@@ -50,6 +51,7 @@ describe ( 'Kasi', it => {
     t.is ( isConstantCase ( 'HTMLParser' ), false );
     t.is ( isConstantCase ( 'sYlLyCaSe' ), false );
     t.is ( isConstantCase ( 'SyLlYcAsE' ), false );
+    t.is ( isConstantCase ( ' _TEST_FOOBar-baz baz' ), false );
     t.is ( isConstantCase ( '  multi UPPER word  ' ), false );
 
   });
@@ -71,6 +73,7 @@ describe ( 'Kasi', it => {
     t.is ( isDotCase ( 'HTMLParser' ), false );
     t.is ( isDotCase ( 'sYlLyCaSe' ), false );
     t.is ( isDotCase ( 'SyLlYcAsE' ), false );
+    t.is ( isDotCase ( ' _TEST_FOOBar-baz baz' ), false );
     t.is ( isDotCase ( '  multi UPPER word  ' ), false );
 
   });
@@ -92,6 +95,7 @@ describe ( 'Kasi', it => {
     t.is ( isKebabCase ( 'HTMLParser' ), false );
     t.is ( isKebabCase ( 'sYlLyCaSe' ), false );
     t.is ( isKebabCase ( 'SyLlYcAsE' ), false );
+    t.is ( isKebabCase ( ' _TEST_FOOBar-baz baz' ), false );
     t.is ( isKebabCase ( '  multi UPPER word  ' ), false );
 
   });
@@ -113,6 +117,7 @@ describe ( 'Kasi', it => {
     t.is ( isLowerCase ( 'HTMLParser' ), false );
     t.is ( isLowerCase ( 'sYlLyCaSe' ), false );
     t.is ( isLowerCase ( 'SyLlYcAsE' ), false );
+    t.is ( isLowerCase ( ' _TEST_FOOBar-baz baz' ), false );
     t.is ( isLowerCase ( '  multi UPPER word  ' ), false );
 
   });
@@ -134,6 +139,7 @@ describe ( 'Kasi', it => {
     t.is ( isPascalCase ( 'HTMLParser' ), false );
     t.is ( isPascalCase ( 'sYlLyCaSe' ), false );
     t.is ( isPascalCase ( 'SyLlYcAsE' ), true );
+    t.is ( isPascalCase ( ' _TEST_FOOBar-baz baz' ), false );
     t.is ( isPascalCase ( '  multi UPPER word  ' ), false );
 
   });
@@ -155,6 +161,7 @@ describe ( 'Kasi', it => {
     t.is ( isPathCase ( 'HTMLParser' ), false );
     t.is ( isPathCase ( 'sYlLyCaSe' ), false );
     t.is ( isPathCase ( 'SyLlYcAsE' ), false );
+    t.is ( isPathCase ( ' _TEST_FOOBar-baz baz' ), false );
     t.is ( isPathCase ( '  multi UPPER word  ' ), false );
 
   });
@@ -176,6 +183,7 @@ describe ( 'Kasi', it => {
     t.is ( isSnakeCase ( 'HTMLParser' ), false );
     t.is ( isSnakeCase ( 'sYlLyCaSe' ), false );
     t.is ( isSnakeCase ( 'SyLlYcAsE' ), false );
+    t.is ( isSnakeCase ( ' _TEST_FOOBar-baz baz' ), false );
     t.is ( isSnakeCase ( '  multi UPPER word  ' ), false );
 
   });
@@ -197,6 +205,7 @@ describe ( 'Kasi', it => {
     t.is ( isTitleCase ( 'HTMLParser' ), false );
     t.is ( isTitleCase ( 'sYlLyCaSe' ), false );
     t.is ( isTitleCase ( 'SyLlYcAsE' ), false );
+    t.is ( isTitleCase ( ' _TEST_FOOBar-baz baz' ), false );
     t.is ( isTitleCase ( '  multi UPPER word  ' ), false );
 
   });
@@ -218,6 +227,7 @@ describe ( 'Kasi', it => {
     t.is ( isUpperCase ( 'HTMLParser' ), false );
     t.is ( isUpperCase ( 'sYlLyCaSe' ), false );
     t.is ( isUpperCase ( 'SyLlYcAsE' ), false );
+    t.is ( isUpperCase ( ' _TEST_FOOBar-baz baz' ), false );
     t.is ( isUpperCase ( '  multi UPPER word  ' ), false );
 
   });
@@ -241,6 +251,7 @@ describe ( 'Kasi', it => {
     t.is ( toCamelCase ( 'HTMLParser' ), 'htmlParser' );
     t.is ( toCamelCase ( 'sYlLyCaSe' ), 'sYlLyCaSe' );
     t.is ( toCamelCase ( 'SyLlYcAsE' ), 'syLlYcAsE' );
+    t.is ( toCamelCase ( ' _TEST_FOOBar-baz baz' ), 'testFooBarBazBaz' );
     t.is ( toCamelCase ( '  multi UPPER word  ' ), 'multiUpperWord' );
 
   });
@@ -262,6 +273,7 @@ describe ( 'Kasi', it => {
     t.is ( toConstantCase ( 'HTMLParser' ), 'HTML_PARSER' );
     t.is ( toConstantCase ( 'sYlLyCaSe' ), 'S_YL_LY_CA_SE' );
     t.is ( toConstantCase ( 'SyLlYcAsE' ), 'SY_LL_YC_AS_E' );
+    t.is ( toConstantCase ( ' _TEST_FOOBar-baz baz' ), 'TEST_FOO_BAR_BAZ_BAZ' );
     t.is ( toConstantCase ( '  multi UPPER word  ' ), 'MULTI_UPPER_WORD' );
 
   });
@@ -283,6 +295,7 @@ describe ( 'Kasi', it => {
     t.is ( toDotCase ( 'HTMLParser' ), 'html.parser' );
     t.is ( toDotCase ( 'sYlLyCaSe' ), 's.yl.ly.ca.se' );
     t.is ( toDotCase ( 'SyLlYcAsE' ), 'sy.ll.yc.as.e' );
+    t.is ( toDotCase ( ' _TEST_FOOBar-baz baz' ), 'test.foo.bar.baz.baz' );
     t.is ( toDotCase ( '  multi UPPER word  ' ), 'multi.upper.word' );
 
   });
@@ -304,6 +317,7 @@ describe ( 'Kasi', it => {
     t.is ( toKebabCase ( 'HTMLParser' ), 'html-parser' );
     t.is ( toKebabCase ( 'sYlLyCaSe' ), 's-yl-ly-ca-se' );
     t.is ( toKebabCase ( 'SyLlYcAsE' ), 'sy-ll-yc-as-e' );
+    t.is ( toKebabCase ( ' _TEST_FOOBar-baz baz' ), 'test-foo-bar-baz-baz' );
     t.is ( toKebabCase ( '  multi UPPER word  ' ), 'multi-upper-word' );
 
   });
@@ -325,6 +339,7 @@ describe ( 'Kasi', it => {
     t.is ( toLowerCase ( 'HTMLParser' ), 'html parser' );
     t.is ( toLowerCase ( 'sYlLyCaSe' ), 's yl ly ca se' );
     t.is ( toLowerCase ( 'SyLlYcAsE' ), 'sy ll yc as e' );
+    t.is ( toLowerCase ( ' _TEST_FOOBar-baz baz' ), 'test foo bar baz baz' );
     t.is ( toLowerCase ( '  multi UPPER word  ' ), 'multi upper word' );
 
   });
@@ -346,6 +361,7 @@ describe ( 'Kasi', it => {
     t.is ( toPascalCase ( 'HTMLParser' ), 'HtmlParser' );
     t.is ( toPascalCase ( 'sYlLyCaSe' ), 'SYlLyCaSe' );
     t.is ( toPascalCase ( 'SyLlYcAsE' ), 'SyLlYcAsE' );
+    t.is ( toPascalCase ( ' _TEST_FOOBar-baz baz' ), 'TestFooBarBazBaz' );
     t.is ( toPascalCase ( '  multi UPPER word  ' ), 'MultiUpperWord' );
 
   });
@@ -367,6 +383,7 @@ describe ( 'Kasi', it => {
     t.is ( toPathCase ( 'HTMLParser' ), 'html/parser' );
     t.is ( toPathCase ( 'sYlLyCaSe' ), 's/yl/ly/ca/se' );
     t.is ( toPathCase ( 'SyLlYcAsE' ), 'sy/ll/yc/as/e' );
+    t.is ( toPathCase ( ' _TEST_FOOBar-baz baz' ), 'test/foo/bar/baz/baz' );
     t.is ( toPathCase ( '  multi UPPER word  ' ), 'multi/upper/word' );
 
   });
@@ -388,6 +405,7 @@ describe ( 'Kasi', it => {
     t.is ( toSnakeCase ( 'HTMLParser' ), 'html_parser' );
     t.is ( toSnakeCase ( 'sYlLyCaSe' ), 's_yl_ly_ca_se' );
     t.is ( toSnakeCase ( 'SyLlYcAsE' ), 'sy_ll_yc_as_e' );
+    t.is ( toSnakeCase ( ' _TEST_FOOBar-baz baz' ), 'test_foo_bar_baz_baz' );
     t.is ( toSnakeCase ( '  multi UPPER word  ' ), 'multi_upper_word' );
 
   });
@@ -409,6 +427,7 @@ describe ( 'Kasi', it => {
     t.is ( toTitleCase ( 'HTMLParser' ), 'Html Parser' );
     t.is ( toTitleCase ( 'sYlLyCaSe' ), 'S Yl Ly Ca Se' );
     t.is ( toTitleCase ( 'SyLlYcAsE' ), 'Sy Ll Yc As E' );
+    t.is ( toTitleCase ( ' _TEST_FOOBar-baz baz' ), 'Test Foo Bar Baz Baz' );
     t.is ( toTitleCase ( '  multi UPPER word  ' ), 'Multi Upper Word' )
 
   });
@@ -430,6 +449,7 @@ describe ( 'Kasi', it => {
     t.is ( toUpperCase ( 'HTMLParser' ), 'HTML PARSER' );
     t.is ( toUpperCase ( 'sYlLyCaSe' ), 'S YL LY CA SE' );
     t.is ( toUpperCase ( 'SyLlYcAsE' ), 'SY LL YC AS E' );
+    t.is ( toUpperCase ( ' _TEST_FOOBar-baz baz' ), 'TEST FOO BAR BAZ BAZ' );
     t.is ( toUpperCase ( '  multi UPPER word  ' ), 'MULTI UPPER WORD' );
 
   });
@@ -476,6 +496,7 @@ describe ( 'Kasi', it => {
     t.is ( detect ( 'HTMLParser' ), 'unknown' );
     t.is ( detect ( 'sYlLyCaSe' ), 'camel' );
     t.is ( detect ( 'SyLlYcAsE' ), 'pascal' );
+    t.is ( detect ( ' _TEST_FOOBar-baz baz' ), 'unknown' );
     t.is ( detect ( '  multi UPPER word  ' ), 'unknown' );
 
   });
