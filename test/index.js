@@ -200,7 +200,7 @@ describe ( 'Kasi', it => {
     t.is ( isTitleCase ( 'path/case' ), false );
     t.is ( isTitleCase ( 'snake_case' ), false );
     t.is ( isTitleCase ( 'Title Case' ), true );
-    t.is ( isTitleCase ( 'UPPERCASE' ), false );
+    t.is ( isTitleCase ( 'UPPERCASE' ), true );
     t.is ( isTitleCase ( 'useHTMLBox' ), false );
     t.is ( isTitleCase ( 'HTMLParser' ), false );
     t.is ( isTitleCase ( 'sYlLyCaSe' ), false );
@@ -413,22 +413,22 @@ describe ( 'Kasi', it => {
   it ( 'toTitleCase', t => {
 
     t.is ( toTitleCase ( 'camelCase' ), 'Camel Case' );
-    t.is ( toTitleCase ( 'CONSTANT_CASE' ), 'Constant Case' );
+    t.is ( toTitleCase ( 'CONSTANT_CASE' ), 'CONSTANT CASE' );
     t.is ( toTitleCase ( 'dot.case' ), 'Dot Case' );
-    t.is ( toTitleCase ( 'SCREAMING-KEBAB' ), 'Screaming Kebab' );
+    t.is ( toTitleCase ( 'SCREAMING-KEBAB' ), 'SCREAMING KEBAB' );
     t.is ( toTitleCase ( 'kebab-case' ), 'Kebab Case' );
     t.is ( toTitleCase ( 'lowercase' ), 'Lowercase' );
     t.is ( toTitleCase ( 'PascalCase' ), 'Pascal Case' );
     t.is ( toTitleCase ( 'path/case' ), 'Path Case' );
     t.is ( toTitleCase ( 'snake_case' ), 'Snake Case' );
     t.is ( toTitleCase ( 'Title Case' ), 'Title Case' );
-    t.is ( toTitleCase ( 'UPPERCASE' ), 'Uppercase' );
-    t.is ( toTitleCase ( 'useHTMLBox' ), 'Use Html Box' );
-    t.is ( toTitleCase ( 'HTMLParser' ), 'Html Parser' );
+    t.is ( toTitleCase ( 'UPPERCASE' ), 'UPPERCASE' );
+    t.is ( toTitleCase ( 'useHTMLBox' ), 'Use HTML Box' );
+    t.is ( toTitleCase ( 'HTMLParser' ), 'HTML Parser' );
     t.is ( toTitleCase ( 'sYlLyCaSe' ), 'S Yl Ly Ca Se' );
     t.is ( toTitleCase ( 'SyLlYcAsE' ), 'Sy Ll Yc As E' );
-    t.is ( toTitleCase ( ' _TEST_FOOBar-baz baz' ), 'Test Foo Bar Baz Baz' );
-    t.is ( toTitleCase ( '  multi UPPER word  ' ), 'Multi Upper Word' )
+    t.is ( toTitleCase ( ' _TEST_FOOBar-baz baz' ), 'TEST FOO Bar Baz Baz' );
+    t.is ( toTitleCase ( '  multi UPPER word  ' ), 'Multi UPPER Word' )
 
   });
 
@@ -466,7 +466,7 @@ describe ( 'Kasi', it => {
     t.is ( apply ( 'some EXAMPLE', 'pascal' ), 'SomeExample' );
     t.is ( apply ( 'some EXAMPLE', 'path' ), 'some/example' );
     t.is ( apply ( 'some EXAMPLE', 'snake' ), 'some_example' );
-    t.is ( apply ( 'some EXAMPLE', 'title' ), 'Some Example' );
+    t.is ( apply ( 'some EXAMPLE', 'title' ), 'Some EXAMPLE' );
     t.is ( apply ( 'some EXAMPLE', 'unknown' ), 'some EXAMPLE' );
     t.is ( apply ( 'some EXAMPLE', 'upper' ), 'SOME EXAMPLE' );
 
