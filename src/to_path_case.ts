@@ -1,13 +1,13 @@
 
 /* IMPORT */
 
-import toSpaceCase from './to_space_case';
+import toLowerCase from './to_lower_case';
 
 /* MAIN */
 
 const toPathCase = ( value: string ): string => {
 
-  return toSpaceCase ( value ).replaceAll ( ' ', '/' );
+  return toLowerCase ( value ).replaceAll ( ' ', '/' );
 
 };
 

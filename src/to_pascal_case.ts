@@ -1,7 +1,7 @@
 
 /* IMPORT */
 
-import toSpaceCase from './to_space_case';
+import toLowerCase from './to_lower_case';
 
 /* HELPERS */
 
@@ -11,7 +11,7 @@ const upperRe = /(?:^|\s)(\w)/g;
 
 const toPascalCase = ( value: string ): string => {
 
-  return toSpaceCase ( value ).replace ( upperRe, ( _, char ) => char.toUpperCase () );
+  return toLowerCase ( value ).replace ( upperRe, ( _, char ) => char.toUpperCase () );
 
 };
 

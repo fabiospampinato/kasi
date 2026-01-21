@@ -6,11 +6,9 @@ const splitRe = /(^|[a-z ])([A-Z]+)(?=([a-z])?)/g;
 
 /* MAIN */
 
-const toSpaceCase = ( value: string, preserveCase = false ): string => {
+const toSpaceCase = ( value: string ): string => {
 
-  const transform = ( text: string ): string => preserveCase ? text : text.toLowerCase ();
-
-  return transform ( value.replace ( separatorRe, ' ' ).replace ( splitRe, ( _, $1, $2, $3 ) => $3 && $2.length > 1 ? `${$1.trim ()} ${$2.slice ( 0, -1 )} ${$2.slice ( -1 )}` : `${$1.trim ()} ${$2}` ) ).trim ();
+  return value.replace ( separatorRe, ' ' ).replace ( splitRe, ( _, $1, $2, $3 ) => $3 && $2.length > 1 ? `${$1.trim ()} ${$2.slice ( 0, -1 )} ${$2.slice ( -1 )}` : `${$1.trim ()} ${$2}` ).trim ();
 
 };
 

@@ -1,13 +1,13 @@
 
 /* IMPORT */
 
-import toSpaceCase from './to_space_case';
+import toLowerCase from './to_lower_case';
 
 /* MAIN */
 
 const toSnakeCase = ( value: string ): string => {
 
-  return toSpaceCase ( value ).replaceAll ( ' ', '_' );
+  return toLowerCase ( value ).replaceAll ( ' ', '_' );
 
 };
 

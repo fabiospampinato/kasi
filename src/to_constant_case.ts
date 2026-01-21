@@ -1,13 +1,13 @@
 
 /* IMPORT */
 
-import toSpaceCase from './to_space_case';
+import toUpperCase from './to_upper_case';
 
 /* MAIN */
 
 const toConstantCase = ( value: string ): string => {
 
-  return toSpaceCase ( value ).replaceAll ( ' ', '_' ).toUpperCase ();
+  return toUpperCase ( value ).replaceAll ( ' ', '_' );
 
 };
 
