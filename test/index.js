@@ -100,13 +100,13 @@ describe ( 'Kasi', it => {
 
     t.is ( isLowerCase ( 'camelCase' ), false );
     t.is ( isLowerCase ( 'CONSTANT_CASE' ), false );
-    t.is ( isLowerCase ( 'dot.case' ), true );
+    t.is ( isLowerCase ( 'dot.case' ), false );
     t.is ( isLowerCase ( 'SCREAMING-KEBAB' ), false );
-    t.is ( isLowerCase ( 'kebab-case' ), true );
+    t.is ( isLowerCase ( 'kebab-case' ), false );
     t.is ( isLowerCase ( 'lowercase' ), true );
     t.is ( isLowerCase ( 'PascalCase' ), false );
-    t.is ( isLowerCase ( 'path/case' ), true );
-    t.is ( isLowerCase ( 'snake_case' ), true );
+    t.is ( isLowerCase ( 'path/case' ), false );
+    t.is ( isLowerCase ( 'snake_case' ), false );
     t.is ( isLowerCase ( 'Title Case' ), false );
     t.is ( isLowerCase ( 'UPPERCASE' ), false );
     t.is ( isLowerCase ( 'useHTMLBox' ), false );
@@ -204,9 +204,9 @@ describe ( 'Kasi', it => {
   it ( 'isUpperCase', t => {
 
     t.is ( isUpperCase ( 'camelCase' ), false );
-    t.is ( isUpperCase ( 'CONSTANT_CASE' ), true );
+    t.is ( isUpperCase ( 'CONSTANT_CASE' ), false );
     t.is ( isUpperCase ( 'dot.case' ), false );
-    t.is ( isUpperCase ( 'SCREAMING-KEBAB' ), true );
+    t.is ( isUpperCase ( 'SCREAMING-KEBAB' ), false );
     t.is ( isUpperCase ( 'kebab-case' ), false );
     t.is ( isUpperCase ( 'lowercase' ), false );
     t.is ( isUpperCase ( 'PascalCase' ), false );
@@ -310,22 +310,22 @@ describe ( 'Kasi', it => {
 
   it ( 'toLowerCase', t => {
 
-    t.is ( toLowerCase ( 'camelCase' ), 'camelcase' );
-    t.is ( toLowerCase ( 'CONSTANT_CASE' ), 'constant_case' );
-    t.is ( toLowerCase ( 'dot.case' ), 'dot.case' );
-    t.is ( toLowerCase ( 'SCREAMING-KEBAB' ), 'screaming-kebab' );
-    t.is ( toLowerCase ( 'kebab-case' ), 'kebab-case' );
+    t.is ( toLowerCase ( 'camelCase' ), 'camel case' );
+    t.is ( toLowerCase ( 'CONSTANT_CASE' ), 'constant case' );
+    t.is ( toLowerCase ( 'dot.case' ), 'dot case' );
+    t.is ( toLowerCase ( 'SCREAMING-KEBAB' ), 'screaming kebab' );
+    t.is ( toLowerCase ( 'kebab-case' ), 'kebab case' );
     t.is ( toLowerCase ( 'lowercase' ), 'lowercase' );
-    t.is ( toLowerCase ( 'PascalCase' ), 'pascalcase' );
-    t.is ( toLowerCase ( 'path/case' ), 'path/case' );
-    t.is ( toLowerCase ( 'snake_case' ), 'snake_case' );
+    t.is ( toLowerCase ( 'PascalCase' ), 'pascal case' );
+    t.is ( toLowerCase ( 'path/case' ), 'path case' );
+    t.is ( toLowerCase ( 'snake_case' ), 'snake case' );
     t.is ( toLowerCase ( 'Title Case' ), 'title case' );
     t.is ( toLowerCase ( 'UPPERCASE' ), 'uppercase' );
-    t.is ( toLowerCase ( 'useHTMLBox' ), 'usehtmlbox' );
-    t.is ( toLowerCase ( 'HTMLParser' ), 'htmlparser' );
-    t.is ( toLowerCase ( 'sYlLyCaSe' ), 'syllycase' );
-    t.is ( toLowerCase ( 'SyLlYcAsE' ), 'syllycase' );
-    t.is ( toLowerCase ( '  multi UPPER word  ' ), '  multi upper word  ' );
+    t.is ( toLowerCase ( 'useHTMLBox' ), 'use html box' );
+    t.is ( toLowerCase ( 'HTMLParser' ), 'html parser' );
+    t.is ( toLowerCase ( 'sYlLyCaSe' ), 's yl ly ca se' );
+    t.is ( toLowerCase ( 'SyLlYcAsE' ), 'sy ll yc as e' );
+    t.is ( toLowerCase ( '  multi UPPER word  ' ), 'multi upper word' );
 
   });
 
@@ -415,22 +415,22 @@ describe ( 'Kasi', it => {
 
   it ( 'toUpperCase', t => {
 
-    t.is ( toUpperCase ( 'camelCase' ), 'CAMELCASE' );
-    t.is ( toUpperCase ( 'CONSTANT_CASE' ), 'CONSTANT_CASE' );
-    t.is ( toUpperCase ( 'dot.case' ), 'DOT.CASE' );
-    t.is ( toUpperCase ( 'SCREAMING-KEBAB' ), 'SCREAMING-KEBAB' );
-    t.is ( toUpperCase ( 'kebab-case' ), 'KEBAB-CASE' );
+    t.is ( toUpperCase ( 'camelCase' ), 'CAMEL CASE' );
+    t.is ( toUpperCase ( 'CONSTANT_CASE' ), 'CONSTANT CASE' );
+    t.is ( toUpperCase ( 'dot.case' ), 'DOT CASE' );
+    t.is ( toUpperCase ( 'SCREAMING-KEBAB' ), 'SCREAMING KEBAB' );
+    t.is ( toUpperCase ( 'kebab-case' ), 'KEBAB CASE' );
     t.is ( toUpperCase ( 'lowercase' ), 'LOWERCASE' );
-    t.is ( toUpperCase ( 'PascalCase' ), 'PASCALCASE' );
-    t.is ( toUpperCase ( 'path/case' ), 'PATH/CASE' );
-    t.is ( toUpperCase ( 'snake_case' ), 'SNAKE_CASE' );
+    t.is ( toUpperCase ( 'PascalCase' ), 'PASCAL CASE' );
+    t.is ( toUpperCase ( 'path/case' ), 'PATH CASE' );
+    t.is ( toUpperCase ( 'snake_case' ), 'SNAKE CASE' );
     t.is ( toUpperCase ( 'Title Case' ), 'TITLE CASE' );
     t.is ( toUpperCase ( 'UPPERCASE' ), 'UPPERCASE' );
-    t.is ( toUpperCase ( 'useHTMLBox' ), 'USEHTMLBOX' );
-    t.is ( toUpperCase ( 'HTMLParser' ), 'HTMLPARSER' );
-    t.is ( toUpperCase ( 'sYlLyCaSe' ), 'SYLLYCASE' );
-    t.is ( toUpperCase ( 'SyLlYcAsE' ), 'SYLLYCASE' );
-    t.is ( toUpperCase ( '  multi UPPER word  ' ), '  MULTI UPPER WORD  ' );
+    t.is ( toUpperCase ( 'useHTMLBox' ), 'USE HTML BOX' );
+    t.is ( toUpperCase ( 'HTMLParser' ), 'HTML PARSER' );
+    t.is ( toUpperCase ( 'sYlLyCaSe' ), 'S YL LY CA SE' );
+    t.is ( toUpperCase ( 'SyLlYcAsE' ), 'SY LL YC AS E' );
+    t.is ( toUpperCase ( '  multi UPPER word  ' ), 'MULTI UPPER WORD' );
 
   });
 
@@ -464,7 +464,7 @@ describe ( 'Kasi', it => {
     t.is ( detect ( 'camelCase' ), 'camel' );
     t.is ( detect ( 'CONSTANT_CASE' ), 'constant' );
     t.is ( detect ( 'dot.case' ), 'dot' );
-    t.is ( detect ( 'SCREAMING-KEBAB' ), 'upper' );
+    t.is ( detect ( 'SCREAMING-KEBAB' ), 'unknown' );
     t.is ( detect ( 'kebab-case' ), 'kebab' );
     t.is ( detect ( 'lowercase' ), 'lower' );
     t.is ( detect ( 'PascalCase' ), 'pascal' );

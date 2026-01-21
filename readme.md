@@ -162,8 +162,8 @@ toKebabCase ( 'foo_bar' ); // => 'foo-bar'
 ```ts
 import {toLowerCase} from 'kasi';
 
-toLowerCase ( 'FooBar' ); // => 'foobar'
-toLowerCase ( 'foo-bar' ); // => 'foo-bar'
+toLowerCase ( 'FooBar' ); // => 'foo bar'
+toLowerCase ( 'foo-bar' ); // => 'foo bar'
 ```
 
 #### `toPascalCase`
@@ -207,8 +207,8 @@ toTitleCase ( 'foo-bar' ); // => 'Foo Bar'
 ```ts
 import {toUpperCase} from 'kasi';
 
-toUpperCase ( 'fooBar' ); // => 'FOOBAR'
-toUpperCase ( 'foo-bar' ); // => 'FOO-BAR'
+toUpperCase ( 'fooBar' ); // => 'FOO BAR'
+toUpperCase ( 'foo-bar' ); // => 'FOO BAR'
 ```
 
 ### Extra

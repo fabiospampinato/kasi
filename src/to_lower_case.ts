@@ -1,9 +1,13 @@
 
+/* IMPORT */
+
+import toSpaceCase from './to_space_case';
+
 /* MAIN */
 
 const toLowerCase = ( value: string ): string => {
 
-  return value.toLowerCase ();
+  return toSpaceCase ( value ).toLowerCase ();
 
 };
 
